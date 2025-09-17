@@ -47,13 +47,13 @@ h2 {
     color: #17191b;
 }
 
-#form {
+form {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-#form input[type="text"] {
+form input[type="text"] {
     flex: 1;
     padding: 10px;
     border: 2px solid #ddd;
@@ -62,11 +62,11 @@ h2 {
     transition: 0.3s;
 }
 
-#form input[type="text"]:focus {
+form input[type="text"]:focus {
     border-color: #855895;
 }
 
-#form button {
+form button {
     background: #855895;
     color: #fff;
     font-size: 1.2rem;
@@ -78,7 +78,7 @@ h2 {
     transition: 0.3s;
 }
 
-#form button:hover {
+form button:hover {
     background: #855895;
 }
 
@@ -87,7 +87,7 @@ h2 {
 }
 
 .cont-to-do, 
-.cont-complet-list-check {
+.cont-completed-list-check {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -99,16 +99,16 @@ h2 {
 }
 
 .cont-to-do:hover, 
-.cont-complet-list-check:hover {
+.cont-completed-list-check:hover {
     background: #e6e6e6;
 }
 
-.cont-complet-list-check p {
+.cont-completed-list-check p {
     text-decoration: line-through;
     color: #888;
 }
 
-.cont-complet-list-check button{
+.cont-completed-list-check button{
     background: crimson; 
     color: white;      
     border: none;
@@ -120,7 +120,7 @@ h2 {
     margin-left: auto;
 }
 
-.cont-complet-list-check button:hover {
+.cont-completed-list-check button:hover {
   background: rgb(94, 0, 0);
 }
 
