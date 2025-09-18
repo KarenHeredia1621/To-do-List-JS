@@ -66,7 +66,7 @@ function eventsToItem(item){
     const checkbox = item.querySelector('input');
     const deleteBtn = item.querySelector('button');
 
-    
+
 //MARCAR COMO COMPLETADA LA TAREA
     checkbox.addEventListener('change', ()=>{
         if (checkbox.checked) {
@@ -82,3 +82,20 @@ function eventsToItem(item){
         item.remove()
     })
 }
+
+const btnStyles = document.getElementById('change-style')
+        btnStyles.addEventListener('click', ()=>{
+        const linkCss = document.getElementById('enlace-estilos')
+
+            if (linkCss.getAttribute('href') === 'css/style.css') {
+                linkCss.setAttribute('href', 'css/style-noche.css')
+                btnStyles.textContent = "Modo noche";
+            }
+
+            else{
+                linkCss.setAttribute('href', 'css/style.css')
+                btnStyles.textContent = "Modo día";
+            }
+
+});
+

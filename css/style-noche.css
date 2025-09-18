@@ -2,18 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Libertinus+Serif+Display&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fredoka:wght@300..700&family=Moon+Dance&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Spicy+Rice&display=swap');
 
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
 body {
     font-family: "Raleway", sans-serif;
-    background: #f9f9f9;
-    color: #333;
+    background: #090909; 
+    color: #f1f1f1;  
     line-height: 1.5;
     display: flex;
     justify-content: center;
@@ -22,34 +20,31 @@ body {
     padding: 20px;
 }
 
-/* Contenedor principal */
 #global-content {
-    background: #fff;
+    background: #1c1c1c; 
     width: 100%;
     max-width: 400px;
     padding: 20px;
-    border: 2px solid #333;
+    border: 2px solid #444;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5);
 }
 
-/* Títulos */
 h1 {
     font-family: "Cormorant SC", serif;
     font-size: 2.2rem;
     text-align: center;
     margin-bottom: 15px;
-    color: #17191b;
+    color: #f9f9f9;
 }
 
 h2, h3 {
     font-family: "Cormorant SC", serif;
     font-size: 1.4rem;
     margin: 15px 0 10px;
-    color: #17191b;
+    color: #eaeaea;
 }
 
-/* Formulario */
 form {
     display: flex;
     gap: 10px;
@@ -59,10 +54,16 @@ form {
 form input[type="text"] {
     flex: 1;
     padding: 10px;
-    border: 2px solid #ddd;
+    background: #2b2b2b;
+    color: #f1f1f1;
+    border: 2px solid #555;
     border-radius: 8px;
     outline: none;
     transition: 0.3s;
+}
+
+form input[type="text"]::placeholder {
+    color: #aaa;
 }
 
 form input[type="text"]:focus {
@@ -82,21 +83,19 @@ form button {
 }
 
 form button:hover {
-    background: #6c4378;
+    background: #9b6ca8;
 }
 
-/* Contenedores de listas */
 #cont-to-do-list,
 #cont-completed-list {
     margin-bottom: 20px;
 }
 
-/* Ítems de la lista */
 .item-to-do {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: #f1f1f1;
+    background: #2a2a2a;
     padding: 10px;
     margin-bottom: 8px;
     border-radius: 8px;
@@ -104,18 +103,16 @@ form button:hover {
 }
 
 .item-to-do:hover {
-    background: #e6e6e6;
+    background: #3a3a3a;
 }
 
-/* Texto tachado en completados */
 .item-to-do.completed p {
     text-decoration: line-through;
     color: #888;
 }
 
-/* Botón de eliminar */
 .item-to-do button {
-    background: crimson; 
+    background: #d32f2f; 
     color: white;      
     border: none;
     border-radius: 50%;  
@@ -127,21 +124,28 @@ form button:hover {
 }
 
 .item-to-do button:hover {
-    background: rgb(94, 0, 0);
+    background: #9a0000;
 }
 
 #cont-completed-list .item-to-do p{
     text-decoration: line-through;
 }
 
-
 #change-style{
     position: absolute;
     bottom: 10px;
     right: 10px;
-    padding: 20px;
-    background-color: #b589c6a9;
+    padding: 12px 20px;
+    background-color: #6c4378cc;
+    color: #fff;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 70px;
+    font-weight: bold;
+    transition: 0.3s;
 }
+
+#change-style:hover{
+    background-color: #855895;
+}
+
 
