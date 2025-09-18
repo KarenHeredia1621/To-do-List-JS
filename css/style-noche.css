@@ -27,7 +27,7 @@ body {
     padding: 20px;
     border: 2px solid #444;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    box-shadow: 0 6px 12px rgba(142, 142, 142, 0.5);
 }
 
 h1 {
@@ -138,7 +138,7 @@ form button:hover {
     padding: 12px 20px;
     background-color: #6c4378cc;
     color: #fff;
-    border-radius: 8px;
+    border-radius: 60px;
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
