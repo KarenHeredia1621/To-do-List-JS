@@ -5,33 +5,54 @@ const addBtn = document.getElementById("add-btn");
 const toDoList = document.getElementById("cont-to-do-list");
 const contCompletedList = document.getElementById("cont-completed-list");
 
-//Creamos la función que nos permite crear una nueva tarea a partir del formulario
-// Toda la etiqueta que vamos a crear es a partir de la maqueta HTML pre-existente
+
+//CREAMOS LA FUNCIÓN QUE NOS PERMITE CREAR UNA NUEVA TAREA APARTIR DEL FORMULARIO
+//TODA ETIQUETA QUE VAMOS A CREAR ES A PARTIR DE LA MAQUETA HTML PRE-EXISTENTE
 
 function createToDoItem(textItem){
-//Creamos el nodo o elemento padre
+
+    //CREAMOS EL NODO O ELEMENTO PADRE
     const item = document.createElement("div");
     item.classList.add("item-to-do");
-    
-//Creamos el nodo hijo del input y le agregamos el type checkbox
+
+    //CREAMOS EL NODO HIJO DEL INPUT Y LE AGREGAMOS EL TYPE CHECKBOX
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
 
-//Creamos el siguiente nodo hijo-Parrafo
-//A este parrafo le asigno el valor del argumento de la función, es decir: lo que escribe el usuario en el campo
-    constP = document.createElement("p");
-    p.textContent = textItem;
 
-//Creamos el último nodo hijo, el botón de eliminar
+    //CREAMOS EL SIGUIENTE NODO HIJO <p>
+    //A ESTE PÁRRAFO LE ASIGNO EL VALOR DEL ARGUMENTO DE LA FUNCIÓN ES DECIR LO QUE ESCRIBE EL USUARIO EN EL CAMPO DEL FORMULARIO
+    const p = document.createElement("p");
+    p.textContent = textItem
+
+    //CREAMOS EL ÚLTIMO NODO HIJO,  EL BOTÓN DE ELIMINAR
     const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "x"
+    deleteBtn.textContent = "x";
 
-//Ensamblamos dentro del nodo padre sus nodos hijos, es decir la estructura de la tarea
+    //ENSAMBLAMOS DENTRO DEL NODO PADRE SUS NODOS HIJOS, ES DECIR LA ESTRUCTURA DE LA TAREA
     item.appendChild(checkbox);
     item.appendChild(p);
     item.appendChild(deleteBtn);
 
-// utilizamos el return para retornar o dar respuesta del elemento creado, ya que lo usaremos en otra función más adelante.
+    //UTILIZAMOS EL RETURN PARA DAR RESPUESTA DEL ELEMENTO CREADO YA QUE LO USAREMOS EN OTRA FUNCION MAS ADELANTE
     return item;
-
 }
+
+
+//DETECTAMOS EL EVENTO CLICK SOBRE EL BOTÓN AGREGAR CON UN ELEMENTO DE ESCUCHA (listener) 
+//PARA QUE APARTIR DE ESTE EVENTO SE AGREGUE LA TAREA DENTRO DEL CONTENEDOR #cont-to-do-list
+
+    addBtn.addEventListener('click', ()=>{
+    const textItem = input.value.trim();
+    if(textItem == ""){
+
+        alert("No se puede crear una tarea vacia");
+
+    }
+    else{
+        const newItem = createToDoItem(textItem);
+        toDoList.appendChild(newItem);
+        input.value = "";
+    }
+
+});

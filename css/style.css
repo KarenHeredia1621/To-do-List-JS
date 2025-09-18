@@ -2,13 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Libertinus+Serif+Display&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fredoka:wght@300..700&family=Moon+Dance&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Spicy+Rice&display=swap');
 
-
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: "Raleway", sans-serif;
     background: #f9f9f9;
@@ -21,6 +22,7 @@ body {
     padding: 20px;
 }
 
+/* Contenedor principal */
 #global-content {
     background: #fff;
     width: 100%;
@@ -29,9 +31,9 @@ body {
     border: 2px solid #333;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-   
 }
 
+/* Títulos */
 h1 {
     font-family: "Cormorant SC", serif;
     font-size: 2.2rem;
@@ -40,13 +42,14 @@ h1 {
     color: #17191b;
 }
 
-h2 {
+h2, h3 {
     font-family: "Cormorant SC", serif;
     font-size: 1.4rem;
     margin: 15px 0 10px;
     color: #17191b;
 }
 
+/* Formulario */
 form {
     display: flex;
     gap: 10px;
@@ -79,15 +82,17 @@ form button {
 }
 
 form button:hover {
-    background: #855895;
+    background: #6c4378;
 }
 
-#item-to-do-list {
+/* Contenedores de listas */
+#cont-to-do-list,
+#cont-completed-list {
     margin-bottom: 20px;
 }
 
-.cont-to-do, 
-.cont-completed-list-check {
+/* Ítems de la lista */
+.item-to-do {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -98,17 +103,18 @@ form button:hover {
     transition: background 0.3s;
 }
 
-.cont-to-do:hover, 
-.cont-completed-list-check:hover {
+.item-to-do:hover {
     background: #e6e6e6;
 }
 
-.cont-completed-list-check p {
+/* Texto tachado en completados */
+.item-to-do.completed p {
     text-decoration: line-through;
     color: #888;
 }
 
-.cont-completed-list-check button{
+/* Botón de eliminar */
+.item-to-do button {
     background: crimson; 
     color: white;      
     border: none;
@@ -120,9 +126,10 @@ form button:hover {
     margin-left: auto;
 }
 
-.cont-completed-list-check button:hover {
-  background: rgb(94, 0, 0);
+.item-to-do button:hover {
+    background: rgb(94, 0, 0);
 }
+
 
 
     
