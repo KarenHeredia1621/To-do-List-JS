@@ -101,6 +101,11 @@ form button:hover {
     background: #e6e6e6;
 }
 
+.item-to-do p {
+    word-break: break-all;
+    width: 80%;
+}
+
 .item-to-do.completed p {
     text-decoration: line-through;
     color: #888;
@@ -133,10 +138,10 @@ form button:hover {
     right: 10px;
     padding: 12px 20px;
     background-color: #ad7ac2e4;
-    color: #1d1e20f3;
-    cursor: pointer;
+    color: #2a2b2cf3;
     border-radius: 60px;
     border: 1px solid #644370;
+    cursor: pointer;
     font-weight: bold;
 
 }

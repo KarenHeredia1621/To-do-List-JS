@@ -89,12 +89,12 @@ function eventsToItem(item){
 
             if (linkCss.getAttribute('href') === 'css/style.css') {
                 linkCss.setAttribute('href', 'css/style-noche.css')
-                btnStyles.textContent = "Modo noche";
+                btnStyles.textContent = "Modo día";
             }
 
             else{
                 linkCss.setAttribute('href', 'css/style.css')
-                btnStyles.textContent = "Modo día";
+                btnStyles.textContent = "Modo noche";
             }
 
 });
