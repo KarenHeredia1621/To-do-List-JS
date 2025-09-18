@@ -47,7 +47,7 @@ function createToDoItem(textItem){
     const textItem = input.value.trim();
     if(textItem == ""){
 
-        alert("No se puede crear una tarea vacia");
+        alert("No se puede crear una tarea vacía");
 
     }
     else{
@@ -83,7 +83,7 @@ function eventsToItem(item){
     })
 }
 
-const btnStyles = document.getElementById('change-style')
+    const btnStyles = document.getElementById('change-style')
         btnStyles.addEventListener('click', ()=>{
         const linkCss = document.getElementById('enlace-estilos')
 
@@ -98,4 +98,13 @@ const btnStyles = document.getElementById('change-style')
             }
 
 });
+
+// Permitir agregar tarea presionando Enter en el input
+    input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault(); // evita que se recargue la página si el input está dentro de un formulario
+            addBtn.click();
+        }
+});
+
 
