@@ -9,6 +9,7 @@ const contCompletedList = document.getElementById("cont-completed-list");
 //CREAMOS LA FUNCIÓN QUE NOS PERMITE CREAR UNA NUEVA TAREA APARTIR DEL FORMULARIO
 //TODA ETIQUETA QUE VAMOS A CREAR ES A PARTIR DE LA MAQUETA HTML PRE-EXISTENTE
 
+//Esta función crea la estructura del HTML y la deja en un limbo, aún no la inserta en la página.
 function createToDoItem(textItem){
 
     //CREAMOS EL NODO O ELEMENTO PADRE
@@ -20,7 +21,7 @@ function createToDoItem(textItem){
     checkbox.type = "checkbox";
 
 
-    //CREAMOS EL SIGUIENTE NODO HIJO <p>
+    //Creamos el siguiente nodo hijo<p>
     //A ESTE PÁRRAFO LE ASIGNO EL VALOR DEL ARGUMENTO DE LA FUNCIÓN ES DECIR LO QUE ESCRIBE EL USUARIO EN EL CAMPO DEL FORMULARIO
     const p = document.createElement("p");
     p.textContent = textItem
@@ -29,7 +30,7 @@ function createToDoItem(textItem){
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "x";
 
-    //ENSAMBLAMOS DENTRO DEL NODO PADRE SUS NODOS HIJOS, ES DECIR LA ESTRUCTURA DE LA TAREA
+    //ENSAMBLAMOS DENTRO DEL NODO PADRE (item) SUS NODOS HIJOS, ES DECIR LA ESTRUCTURA DE LA TAREA
     item.appendChild(checkbox);
     item.appendChild(p);
     item.appendChild(deleteBtn);
@@ -52,7 +53,32 @@ function createToDoItem(textItem){
     else{
         const newItem = createToDoItem(textItem);
         toDoList.appendChild(newItem);
+        eventsToItem(newItem);
         input.value = "";
     }
 
 });
+
+//La siguiente función nos permitirá agregar el funcionamiento principal sobre las tareas, es decir: marcar la tarea como completado o en dado caso COMPLETAR
+
+function eventsToItem(item){
+//Utilizamos querySelector para capturar el input o el button que esta dentro del item
+    const checkbox = item.querySelector('input');
+    const deleteBtn = item.querySelector('button');
+
+    
+//MARCAR COMO COMPLETADA LA TAREA
+    checkbox.addEventListener('change', ()=>{
+        if (checkbox.checked) {
+            contCompletedList.appendChild(item)
+        }
+
+        else{
+            toDoList.appendChild(item)
+        }
+    });
+
+    deleteBtn.addEventListener('click', ()=>{
+        item.remove()
+    })
+}
